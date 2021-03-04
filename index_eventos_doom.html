@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="../CSS/eventos_dom.css">
-    <script src="../JS/events_dom.js"></script>
+    <link type="text/css" rel="stylesheet" href="/eventos_dom.css">
+    <script src="/events_dom.js"></script>
     <title>Document</title>
 </head>
 <body onload="main();">
@@ -15,23 +15,24 @@
         <p id="mousePosition">Posición del mouse: </p>
     </div>
 
-    <div class="container" id="container_">
+    <div class="container">
         <p>2. Al dar click al siguiente botón, obtén el nombre y apellido de las siguientes cajas de texto, y agrega, después del botón, un elemento que tenga el nombre completo.</p>
-        <form id="form1" onsubmit="getFormvalue()">
+        <form id="form1" onsubmit="getFormvalue(event)">
             First name: <input type="text" id="fname" name="fname" ><br>
             Last name: <input type="text" id="lname" name="lname" ><br><br>
-        <input type="submit" id="Submit" value="Submit">
+        <input type="submit" value="Submit">
+        <p id="fullname"> </p>
         </form>
     </div>
 
     <div class="container">
         <p>3. Agrega el código para agregar una fila, o una columna, a la siguiente tabla al dar click al botón correspondiente.</p>
         <table id="sampleTable" border="1">
-            <tr>
+            <tr id = "row1">
                 <td>Row 1 column 1</td>
                 <td>Row 1 column 2</td>
             </tr>
-            <tr>
+            <tr id = "row2">
                 <td>Row 2 column 1</td>
                 <td>Row 2 column 2</td>
             </tr>
