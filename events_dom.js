@@ -17,32 +17,58 @@ function getFormvalue(event) {
 //Ejercicio 3
 function insertRow() {
     let table = document.getElementById("sampleTable");
-    let rowsA = document.getElementById("myTable").getElementsByTagName("tr");
-    let rows = rowsA.length + 1;
-    let row = document.createElement("tr");
-    row.id = "row" + rows;
-    document.getElementById(sampleTable).appendChild(row);
+    let row = table.insertRow(-1);
+    let rows = table.getElementsByTagName("tr").length;
     let childs = document.getElementById("row1").childElementCount;
-    for (let i = 0; i < childs; i++){
-        let id = "row" + rows;
-        let cell = document.createElement("td");
-        cell.innerHTML = "Row " + rows + " Column " + i;
-        document.getElementById(id).appendChild(cell);
+    for (let i = 0; i < childs; i++) {
+        let casilla = row.insertCell(i);
+        casilla.innerHTML = "Row " + (rows) + " column " + (i + 1);
     }
-}
+};
 
-function insertColumns() {
+function insertColumn() {
     let table = document.getElementById("sampleTable");
+    let rows = table.getElementsByTagName("tr").length;
+    let childs = document.getElementById("row1").childElementCount;
+    for (let i = 0; i < rows; i++){
+        let casilla = table.rows[i].insertCell(-1);
+        casilla.innerHTML = "Row " + (i + 1) + " column " + (childs + 1);
+    }
+};
 
+//Ejercicio 4 
+function changeContent() {
+    let row = document.getElementById("ir").value;
+    let col = document.getElementById("ic").value;
+    let texto = document.getElementById("it").value;
+    let rows = document.getElementById("myTable").rows;
+    let c = rows[row - 1].cells;
+    c[col - 1].innerHTML = texto;
 }
 
-// let table = document.getElementById("sampleTable");
-// let row = table.insertRow(-1);
-// let rowsA = document.getElementById("myTable").getElementsByTagName("tr");
-// let rows = rowsA.length;
-// let childs = document.getElementById("row1").childElementCount;
-// console.log(rows + " " + childs);
-// for (let i = 0; i < childs; i++) {
-//     let casilla = row.insertCell(i);
-//     casilla.innerHTML = "Row " + (rows) + " column " + (i + 1);
-// }
+//Ejercicio 5
+function deleteElement() {
+    let dropDown = document.getElementById("colorSelect");
+
+    dropDown.remove(dropDown.selectedIndex);
+}
+function addElement() {
+    let randomNameList = ["Yellow", "Purple", "Orange", "Blue"]
+    let dropDown = document.getElementById("colorSelect");
+    let newOption = document.createElement("OPTION")
+    newOption.text = randomNameList[Math.floor(Math.random() * Math.floor(4))];
+    dropDown.appendChild(newOption);
+}
+
+//Ejercicio 6
+function changeSize()
+{
+    let img = document.getElementById("cat");
+    img.style.height = Math.floor(Math.random() * Math.floor(600)) + "px";
+    img.style.width = Math.floor(Math.random() * Math.floor(300)) + "px";
+
+    let img2 = document.createElement("img");
+    img2.src = "GatoG.jpg";
+
+    let div = document.getElementById("gatos");
+}

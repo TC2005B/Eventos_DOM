@@ -60,7 +60,11 @@
                 <td>Row3 cell3</td>
             </tr>
             </table><form><br>
+            Fila: <input type="number" id="ir" name="row" placeholder="Número">
+            Columna: <input type="number" id="ic" name="cell" placeholder="Número">
+            Texto: <input type="text" id="it" name="texto" placeholder="Texto"><br><br>
             <input type="button" onclick="changeContent()" value="Change content">
+            
     </div>
 
     <div class="container">
@@ -72,14 +76,14 @@
             <option>White</option>
             <option>Black</option>
             </select>
-            <input type="button" value="Add color">
-            <input type="button" value="Remove color">
+            <input type="button" onclick="addElement()" value="Add color">
+            <input type="button" onclick="deleteElement()" value="Remove color">
         </form>
     </div>
 
-    <div class="container">
+    <div id = "gatos" class="container">
         <p>6. Al poner el mouse encima de la siguiente imagen, genera dos números aleatorios entre 300 y 600 para el width y height de una imagen. Reemplaza la imagen de placeholder por otra similar con el tamaño random que generaste. El evento solo se dispara cuando pones el mouse en la imagen.</p>
-        <img src="http://placekitten.com/200/300">
+        <img id="cat" src="GatoG.jpg" onmouseover="changeSize()">
     </div>
 </body>
 </html>
